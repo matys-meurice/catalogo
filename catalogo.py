@@ -48,7 +48,7 @@ productos = [
 
 # -------- CATÁLOGO --------
 def catalogo():
-    st.markdown("<h1 style='text-align: center;'>🧡 Imprint - Catálogo</h1>", unsafe_allow_html=True)
+    st.markdown("<h1 style='text-align: center;'> Imprint - Catálogo</h1>", unsafe_allow_html=True)
 
     cols = st.columns(3)
 
@@ -78,7 +78,7 @@ def formulario():
         "producto": p["nombre"]
     }
 
-    # 🎨 PIRÁMIDES
+    #  PIRÁMIDES
     if p["tipo"] == "piramide":
         color_fuera = st.selectbox("Color exterior", ["Rojo", "Azul", "Verde", "Negro"])
         color_dentro = st.selectbox("Color interior", ["Rojo", "Azul", "Verde", "Negro"])
@@ -86,17 +86,17 @@ def formulario():
         datos["color_fuera"] = color_fuera
         datos["color_dentro"] = color_dentro
 
-    # ✏️ PERSONALIZADOS
+    #  PERSONALIZADOS
     elif p["tipo"] == "personalizado":
         descripcion = st.text_area("¿Cómo lo quieres?")
         datos["descripcion"] = descripcion
 
-    # 🎯 NORMALES
+    #  NORMALES
     else:
         color = st.selectbox("Color", ["Rojo", "Azul", "Verde", "Negro"])
         datos["color"] = color
 
-    # 🧠 EXTRA PARA TODOS
+    #  EXTRA PARA TODOS
     extra = st.text_area("Especificaciones extra (opcional)")
     datos["extra"] = extra
 
